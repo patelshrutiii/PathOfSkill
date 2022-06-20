@@ -1,0 +1,393 @@
+
+.b1 {
+    background: #f63;
+}
+
+    ::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.b1 {
+    background: #ED213A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+* {
+    box-sizing: border-box;
+} */
+
+.b1 {
+    font-family: 'Montserrat', sans-serif;
+    background: #f6f5f7;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px 0 50px; */
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    /* font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: .5px;
+    margin: 20px 0 30px; */
+}
+
+span {
+    font-size: 12px;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.con1 {
+   
+    /* background: #fff; */
+    border-radius: 10px;
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2); */
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    height:600px !important;
+    /* max-width: 100%;
+    max-height: 100%; */
+    /* min-height: 480px; */
+}
+
+.form-container form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+    /* padding-bottom: 60px; */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.social-container {
+    margin: 20px 0;
+}
+
+.social-container a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.form-container input {
+    background: #eee;
+    border: none;
+    padding: 4px 6px;
+    margin: 6px 0;
+    width: 100%;
+}
+
+.btnlogin {
+    border-radius: 20px;
+    background: linear-gradient(to left, #de2de9, #2864d0);
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-bottom: 2px !important;
+}
+
+.btnlogin:active {
+    transform: scale(.95);
+}
+
+.btnlogin:focus {
+    outline: none;
+}
+
+.btnlogin.ghost {
+    background: transparent;
+    border: 2px solid;
+    border-color: #fff !important;
+    cursor: pointer;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all .6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform .6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay {
+    /* background: #ff416c;
+    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover; */
+    background: linear-gradient(to left, #de2de9, #2864d0);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateY(0);
+    transition: transform .6s ease-in-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform .6s ease-in-out;
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateY(0);
+}
+
+.overlay-left {
+    transform: translateY(-20%);
+}
+
+
+/* Move signin to right */
+
+.container.right-panel-active .sign-in-container {
+    transform: translateY(100%);
+}
+
+
+/* Move overlay to left */
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+
+/* Bring signup over signin */
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+
+/* Move overlay back to right */
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+
+/* Bring back the text to center */
+
+.container.right-panel-active .overlay-left {
+    transform: translateY(0);
+}
+
+
+/* Same effect for right */
+
+.container.right-panel-active .overlay-right {
+    transform: translateY(20%);
+}
+
+.footer {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    letter-spacing: 15px;
+    align-items: center;
+}
+
+.bg-animation {
+    /* background: linear-gradient(to left, #a242a8, #2f60ba); */
+    background: linear-gradient(to left, #78187e, #2557b1);
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-animation-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-animation-box li {
+    position: fixed;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: bg-animate-01 20s linear infinite;
+    bottom: -150px;
+}
+
+.bg-animation-box li.circle-box {
+    border-radius: 50%;
+}
+
+.bg-animation-box li.corners-box-20 {
+    border-radius: 20%;
+}
+
+.bg-animation-box li.corners-box-35 {
+    border-radius: 35%;
+}
+
+.bg-animation-box li:nth-child(1) {
+    left: 4%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.bg-animation-box li:nth-child(2) {
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 1.5s;
+    animation-duration: 10s;
+}
+
+.bg-animation-box li:nth-child(3) {
+    left: 18%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 5.5s;
+}
+
+.bg-animation-box li:nth-child(4) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+
+.bg-animation-box li:nth-child(5) {
+    left: 43%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+}
+
+.bg-animation-box li:nth-child(6) {
+    left: 60%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3.5s;
+}
+
+.bg-animation-box li:nth-child(7) {
+    left: 70%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 6.5s;
+}
+
+.bg-animation-box li:nth-child(8) {
+    left: 95%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 1.5s;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+@keyframes bg-animate-01 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,107 @@
+ .content {
+     position: absolute;
+     bottom: 0;
+     /* background: rgb(0, 0, 0); */
+     /* Fallback color */
+     /* background: rgba(0, 0, 0, 0.5); */
+     /* Black background with 0.5 opacity */
+     color: #f1f1f1;
+     width: 100%;
+     padding: 20px;
+ }
+ 
+ .middle {
+     transition: .5s ease;
+     opacity: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     text-align: center;
+ }
+ 
+ .container:hover .image {
+     opacity: 0.3;
+ }
+ 
+ .container:hover .middle {
+     opacity: 1;
+ }
+ 
+ .text {
+     background-color: #4CAF50;
+     color: white;
+     font-size: 16px;
+     padding: 16px 32px;
+ }
+ 
+ .owl-carousel {
+     width: 100%;
+     position: relative;
+     z-index: 100;
+ }
+ 
+ .owl-carousel .owl-stage-outer {
+     position: relative;
+     overflow: hidden;
+     transform: translate3d(0, 0, 0);
+ }
+ 
+ .owl-carousel .owl-stage {
+     position: relative;
+ }
+ 
+ .owl-carousel .owl-item {
+     /* background: #261a1a; */
+     color: #fff;
+     height: 450px;
+     float: left;
+     position: relative;
+ }
+ 
+ .owl-carousel .owl-item h4 {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+ }
+ 
+ .owl-carousel .owl-nav {
+     position: static;
+ }
+ 
+ .owl-carousel .owl-nav>div {
+     position: absolute;
+     top: 50%;
+     transform: translate(0, -50%);
+     font-size: 2em;
+     font-weight: bold;
+     cursor: pointer;
+     color: #fff;
+ }
+ 
+ .owl-carousel .owl-nav>div.owl-prev {
+     left: 15px;
+ }
+ 
+ .owl-carousel .owl-nav>div.owl-next {
+     right: 15px;
+ }
+ 
+ .owl-carousel .owl-dots {
+     position: absolute;
+     text-align: center;
+     left: 50%;
+     bottom: 10px;
+     transform: translateX(-50%);
+ }
+ 
+ .owl-carousel .owl-dots .owl-dot {
+     /* background: #a6bbc3; */
+     display: inline-block;
+     height: 12px;
+     width: 12px;
+     border-radius: 50%;
+     margin: 0 3px;
+ }
